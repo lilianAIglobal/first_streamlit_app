@@ -1,5 +1,4 @@
 # requirements.txt
 snowflake-connector-python
-streamlit=1.1.11
 cffi==1.15.0
 pyarrow==6.0.1
