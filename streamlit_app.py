@@ -28,3 +28,10 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_c
 fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # display the table
 streamlit.dataframe(fruityvice_normalized)
+
+cnx = snowflake.connector.connect(**streamlit.secrets["snowflakes"])
+curr = cnx.cursor()
+cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
+data_row = cur.fetchone()
+streamlit.text("Hello from Snowflakes")
+streamlit.text(data_row)
