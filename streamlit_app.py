@@ -38,3 +38,6 @@ streamlit.dataframe(data_row)
 
 add_fruit = streamlit.text_input("What fruit would you like to add ?")
 streamlit.write("Thanks for adding", add_fruit)
+
+cur.execute("insert into fruit_load_list values('from streamlit')");
+
