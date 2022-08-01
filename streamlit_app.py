@@ -29,7 +29,7 @@ fruityvice_normalized = pd.json_normalize(fruityvice_response.json())
 # display the table
 streamlit.dataframe(fruityvice_normalized)
 
-cnx = snowflake.connector.connect(**streamlit.secrets["snowflakes"])
+cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 curr = cnx.cursor()
 cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
 data_row = cur.fetchone()
